@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/Arrays" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Arrays (Leetcode)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Backtracking" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Binary Search Tree" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Binary Tree (Hard)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Binary Tree (Medium)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Binary Tree(Traversals)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/DP" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Graph (Kosaraju &amp; Misc)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Graph (MST &amp; DSU)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Graph (Shortest Path)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Graph(Bfs &amp; Dfs)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Graph(Toposort)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Greedy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/heap" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
