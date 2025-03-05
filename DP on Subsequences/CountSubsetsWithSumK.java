@@ -2,8 +2,9 @@ class Solution {
     //Testing git push
     public int f(int ind, int target, int[] nums, int[][] dp) {
         if (ind == 0) {
-            if (target == 0) return 1 + (nums[0] == 0 ? 1 : 0);
-            return (nums[0] == target) ? 1 : 0;
+            if(target == 0 && nums[0] == 0) return 2;
+            if(target == 0 || nums[0] == target) return 1;
+            return 0;
         }
 
         if (dp[ind][target] != -1) return dp[ind][target];
