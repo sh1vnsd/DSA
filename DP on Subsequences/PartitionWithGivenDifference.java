@@ -80,7 +80,7 @@ class Solution {
 
                 curr[j] = notPick + pick;
             }
-            prev = curr;
+            prev = curr.clone();
         }
 
         return prev[target];
