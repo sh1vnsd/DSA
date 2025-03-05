@@ -19,3 +19,7 @@ Q 2 -> Given a nxm grid containing soldiers (1) and civilians (0), We have to te
                  0, 0, 0, 0, 0}
 
             Here the safest village is at the third number [1, 1, 1, 1, 0] becuase it has the highest number of soldiers.
+
+
+Q 3 -> Given a array machine[] = [8, 5, 3, 1, 2] and target = 12 tell what will be the count of minimum exercises done completing the target,
+        and you can do one exercise atmost 2 times.
