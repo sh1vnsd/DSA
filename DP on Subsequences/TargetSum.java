@@ -1,4 +1,4 @@
-
+//The code is same as Count Partition With Given difference 
 class Solution {
         public int f(int ind, int target, int[] nums, int[][] dp) {
         if (ind == 0) {
@@ -39,3 +39,4 @@ public int findTargetSumWays(int[] nums, int target) {
     return countPartitions(nums, target);
 }
 }
+
