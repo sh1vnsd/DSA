@@ -45,7 +45,7 @@ class Solution {
 }
 
 
-//Space Optimization
+//Space iOptimization
 class Solution {
     public int cutRod(int[] price) {
         int n = price.length;
