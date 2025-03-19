@@ -23,3 +23,15 @@ Q 2 -> Given a nxm grid containing soldiers (1) and civilians (0), We have to te
 
 Q 3 -> Given a array machine[] = [8, 5, 3, 1, 2] and target = 12 tell what will be the count of minimum exercises done completing the target,
         and you can do one exercise atmost 2 times.
+
+
+Kadane's Algorithm
+Q 4 -> You are in a game where N enemies stand in a straight line. You have a strength K and must choose a group of consecutive enemies to fight.
+        If an enemy is weaker, you gain points equal to the strength difference; if stronger, you lose points. Find the max. points you can earn.
+        arr = [6, 11, 4, 9, 3, 8], K = 7
+
+        find the diff. of each element with k and over-write in array
+        arr = [1, -4, 3, -2, 4, -1]
+        Now find Maximum Sum Subarray.
+
+        
