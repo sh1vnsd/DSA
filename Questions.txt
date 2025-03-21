@@ -38,3 +38,15 @@ Q 4 -> You are in a game where N enemies stand in a straight line. You have a st
         Now find Maximum Sum Subarray.
 
         
+
+Greedy Algorithm
+Q 5 -> You have multiple containers, each with a given capacity (in liters) and height (in mm). You can fill these containers up to a given maximum             total quantity and are allowed to take a fraction of any container’s capacity.
+
+        Your goal is to maximize the total height achieved by optimally selecting and filling the containers.
+
+        Given:
+
+        The capacity and height of each container.
+         The maximum total quantity you can use.
+
+        Find: The maximum possible height you can achieve.
