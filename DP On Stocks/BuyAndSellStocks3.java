@@ -7,7 +7,6 @@ class Solution {
         if(ind == n) return 0;
         if(dp[ind][buy][cap] != -1) return dp[ind][buy][cap];
         
-        int profit = 0;
         if(buy == 1){
             return dp[ind][buy][cap] = Math.max(-prices[ind] + f(ind + 1, 0, cap, dp, prices),
                                 0 + f(ind + 1, 1, cap, dp, prices));
