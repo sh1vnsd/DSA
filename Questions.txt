@@ -50,3 +50,7 @@ Q 5 -> You have multiple containers, each with a given capacity (in liters) and 
          The maximum total quantity you can use.
 
         Find: The maximum possible height you can achieve.
+
+
+DP on Strings
+Successor Find kro --> LCS nikalo of s1 and s2 and s2.length - lcs(length) --> ans
