@@ -5,7 +5,7 @@ class Item {
     Item(int val, int wt){
         this.val = val;
         this.wt = wt;
-        this.ratio = (double)(val / wt);
+        this.ratio = (double)val / wt;
     }
 }
 class Solution {
@@ -20,14 +20,14 @@ class Solution {
 
         Arrays.sort(arr, (a, b) -> Double.compare(b.ratio, a.ratio));
 
-        int totalSum = 0;
-        for(int i = 0; i < n; i++){
-            if(arr[i].wt <= capacity){
-                totalSum += arr[i].val;
-                capacity -= arr[i].wt;
+        double totalSum = 0;
+        for(Item item : arr){
+            if(item.wt <= capacity){
+                totalSum += item.val;
+                capacity -= item.wt;
             }
             else{
-                totalSum += (double)arr[i].ratio * capacity;
+                totalSum += item.ratio * capacity;
                 break;
             }
         }
