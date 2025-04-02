@@ -53,4 +53,10 @@ Q 5 -> You have multiple containers, each with a given capacity (in liters) and 
 
 
 DP on Strings
-Successor Find kro --> LCS nikalo of s1 and s2 and s2.length - lcs(length) --> ans
+Q 6 -> Successor Find kro --> LCS nikalo of s1 and s2 and s2.length - lcs(length) --> ans
+
+
+
+
+Dp & MAPS
+Q 7 -> Find the length of longest arithmetic subsequence in an array.
