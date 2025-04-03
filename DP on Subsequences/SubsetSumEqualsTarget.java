@@ -3,7 +3,7 @@ import java.util.Arrays;
 class Solution {
     static boolean f(int ind, int target, int[] arr, int n, int[][] dp){
         if(target == 0) return true;
-        if(ind == 0) return (arr[0] == target);
+        if(ind == 0) return (arr[0] == target) ? 1 : 0;
         if(dp[ind][target] != -1) return dp[ind][target] == 1;
         
         boolean notTake = f(ind - 1, target, arr, n, dp);
