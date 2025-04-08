@@ -1,7 +1,7 @@
 public class CheckIfAStringIsSubseqOfOther{
     public static void main(String[] args){
         String s1 = "ABCDE";
-        String s2 = "AED";
+        String s2 = "ACE";
         int n = s1.length();
         int m = s2.length();
         
