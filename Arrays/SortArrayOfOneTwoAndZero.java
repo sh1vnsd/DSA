@@ -1,5 +1,5 @@
 class Solution {
-    public void swap(int low, int high, int[] arr){
+     public void swap(int low, int high, int[] arr){
         int temp = arr[low];
         arr[low] = arr[high];
         arr[high] = temp;
