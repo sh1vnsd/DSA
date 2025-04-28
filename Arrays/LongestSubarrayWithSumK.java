@@ -1,26 +1,20 @@
-import java.util.HashMap;
-
 class Solution {
-    public int longestSubarray(int[] arr, int k) {
-        HashMap<Integer, Integer> mpp = new HashMap<>();
+    public int subarraySum(int[] nums, int k) {
+        int cnt = 0;
+        int prefixSum = 0;
+        Map<Integer, Integer> mpp = new HashMap<>();
+        mpp.put(0, 1);
 
-        int prefixSum = 0, len = 0;
+        for(int i = 0; i < nums.length; i++){
+            prefixSum += nums[i];
 
-        for(int i = 0; i < arr.length; i++){
-            prefixSum += arr[i];
-
-            if(prefixSum == k){
-                len = Math.max(len, i + 1);
-            }
-            else if(mpp.containsKey(prefixSum - k)){
-                len = Math.max(len, i - mpp.get(prefixSum - k));
+            if(mpp.containsKey(prefixSum - k)){
+                cnt += mpp.get(prefixSum - k);
             }
 
-            if(!mpp.containsKey(prefixSum)){
-                mpp.put(prefixSum, i );
-            }
+            mpp.put(prefixSum, mpp.getOrDefault(prefixSum, 0) + 1);
         }
 
-        return len;
+        return cnt;
     }
 }
