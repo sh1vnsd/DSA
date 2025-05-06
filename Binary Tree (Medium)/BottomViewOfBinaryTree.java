@@ -11,8 +11,6 @@ class Solution
 {
     public ArrayList <Integer> bottomView(Node root)
     {
-        int lh = height(node.left, diameter);
-        int rh = height(node.right, diameter);
         Queue<Pair> q = new ArrayDeque<Pair>();
         TreeMap<Integer, Integer> map = new TreeMap<>();
         q.add(new Pair(root, 0));
