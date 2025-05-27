@@ -5,8 +5,8 @@ class Solution {
         }
         if(dp[ind1][ind2] != -1) return dp[ind1][ind2];
 
-        if(str1[ind1] == str2[ind2]) return 1 + lcs(ind1 - 1, ind2 - 1, dp, str1, str2);
-        return Math.max( lcs(ind1 - 1, ind2, dp, str1, str2), lcs(ind1, ind2 - 1, dp, str1, str2));
+        if(str1[ind1] == str2[ind2]) return dp[ind1][ind2] = 1 + lcs(ind1 - 1, ind2 - 1, dp, str1, str2);
+        return dp[ind1][ind2] = Math.max( lcs(ind1 - 1, ind2, dp, str1, str2), lcs(ind1, ind2 - 1, dp, str1, str2));
     }
     public int longestCommonSubsequence(String text1, String text2) {
         char[] str1 = text1.toCharArray();
