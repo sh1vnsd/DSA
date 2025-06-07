@@ -17,7 +17,7 @@ class Solution {
         if(nums[0] <= target) dp[0][nums[0]] = true;
 
         for(int ind = 1; ind < n; ind++){
-            for(int tar = 1; tar <= target; tar++){
+            for(int tar = 0; tar <= target; tar++){
                 boolean notTake = dp[ind - 1][tar];
                 boolean take = false;
 
