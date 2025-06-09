@@ -14,6 +14,8 @@ public class Solution {
             }
         }
 
+        if (fast == null || fast.next == null) return null;
+
         slow = head;
 
         while(slow != fast){
@@ -21,7 +23,7 @@ public class Solution {
             fast = fast.next;
         }
 
-        if(slow != null) return slow;
-        else return null;
+         return slow;
     }
 }
+
