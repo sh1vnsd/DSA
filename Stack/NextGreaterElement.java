@@ -11,7 +11,7 @@ class Solution {
         
         for(int i = n - 1; i >= 0; i--){
 
-            while(!st.isEmpty() && st.peek() < arr[i]){
+            while(!st.isEmpty() && st.peek() <= arr[i]){
                 st.pop();
             }
 
@@ -19,7 +19,7 @@ class Solution {
                 ans.add(-1);
             }
             else{
-                ans.add(st.top());
+                ans.add(st.peek());
             }
 
             st.push(arr[i]);
