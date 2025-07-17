@@ -17,6 +17,7 @@ class Solution {
             String suffix = word.substring(i + 1);
 
             if((st.contains(prefix) && isConcatenated(suffix, st)) || (st.contains(prefix) && st.contains(suffix))){
+                map.put(word, true);
                 return true;
             }
         }
