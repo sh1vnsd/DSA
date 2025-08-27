@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class DisjointSet {
   int[] rank;
   int[] parent;
@@ -59,56 +61,48 @@ public class RainWater {
   }
 
   // Function to check if x1,y1,x2,y2 belongs to same puddle
-  public static void checkSamePuddle(DisjointSet ds, int[][] grid, int[][] queryGrid) {
+  public static void checkSamePuddle(DisjointSet ds, int[][] grid, int row1, int col1, int row2, int col2) {
     int n = grid.length;
-    for (var row : queryGrid) {
-      int row1 = row[0];
-      int col1 = row[1];
-      int row2 = row[2];
-      int col2 = row[3];
 
-      if(grid[row1][col1] == 0 || grid[row2][col2] == 0) continue;
-      
-      int nodeNo = row1 * n + col1;
-      int anotherNodeNo = row2 * n + col2;
+    if (grid[row1][col1] == 0 || grid[row2][col2] == 0)
+      return;
 
-      if (ds.findUltimateParent(nodeNo) == ds.findUltimateParent(anotherNodeNo)) {
-        System.out.println("(" + row1 + "," + col1 + ") and (" + row2 + "," + col2 + ") belongs to the same puddle");
-      }
+    int nodeNo = row1 * n + col1;
+    int anotherNodeNo = row2 * n + col2;
+
+    if (ds.findUltimateParent(nodeNo) == ds.findUltimateParent(anotherNodeNo)) {
+      System.out.println("(" + row1 + "," + col1 + ") and (" + row2 + "," + col2 + ") belongs to the same puddle");
     }
   }
 
   // Function to form puddle
-  public static void check(DisjointSet ds, int[][] grid, int[][] droplets) {
+  public static void check(DisjointSet ds, int[][] grid, int row, int col) {
     int n = grid.length;
 
-    for (var it : droplets) {
-      int row = it[0];
-      int col = it[1];
+    if (grid[row][col] == 1)
+      return;
 
-      if (grid[row][col] == 1)
-        continue;
+    grid[row][col] = 1;
 
-      grid[row][col] = 1;
+    int[] dRow = { -1, 0, 1, 0 };
+    int[] dCol = { 0, 1, 0, -1 };
 
-      int[] dRow = { -1, 0, 1, 0 };
-      int[] dCol = { 0, 1, 0, -1 };
+    for (int i = 0; i < 4; i++) {
+      int nRow = row + dRow[i];
+      int nCol = col + dCol[i];
 
-      for (int i = 0; i < 4; i++) {
-        int nRow = row + dRow[i];
-        int nCol = col + dCol[i];
+      if (nRow >= 0 && nRow < n && nCol >= 0 && nCol < n && grid[nRow][nCol] == 1) {
+        int nodeNo = row * n + col;
+        int adjNodeNo = nRow * n + nCol;
 
-        if (nRow >= 0 && nRow < n && nCol >= 0 && nCol < n && grid[nRow][nCol] == 1) {
-          int nodeNo = row * n + col;
-          int adjNodeNo = nRow * n + nCol;
-
-          ds.unionByRank(nodeNo, adjNodeNo);
-        }
+        ds.unionByRank(nodeNo, adjNodeNo);
       }
     }
   }
 
   public static void main(String[] args) {
+
+    Scanner sc = new Scanner(System.in);
 
     int[][] grid = {
         { 0, 0, 0, 0, 0 },
@@ -121,30 +115,44 @@ public class RainWater {
     int n = grid.length;
     DisjointSet ds = new DisjointSet(n * n);
 
-    int[][] droplets = {
-        { 0, 0 },
-        { 0, 1 },
-        { 1, 0 },
-        { 2, 2 },
-        { 2, 3 },
-        { 3, 2 },
-        { 4, 3 },
-        { 4, 4 },
-        { 3, 4 }
-    };
+    // int[][] droplets = {
+    // { 0, 0 },
+    // { 0, 4 },
+    // { 4, 0 },
+    // { 4, 4 }
+    // };
+    //
+    // int[][] queryGrid = {
+    // { 0, 0, 0, 1 },
+    // { 0, 0, 1, 0 },
+    // { 0, 1, 1, 1 },
+    // { 1, 0, 1, 1 },
+    // { 2, 2, 2, 3 },
+    // { 3, 2, 2, 3 }
+    // };
 
-    int[][] queryGrid = {
-        { 0, 0, 0, 1 },
-        { 0, 0, 1, 0 },
-        { 0, 1, 1, 1 },
-        { 1, 0, 1, 1 },
-        { 2, 2, 2, 3 },
-        { 3, 2, 2, 3 }
-    };
+    while (true) {
+      System.out.println("Enter droplets: ");
+      int row = sc.nextInt();
+      int col = sc.nextInt();
 
-    check(ds, grid, droplets);
-    checkSamePuddle(ds, grid, queryGrid);
-    int c = puddleCount(ds, grid);
-    System.out.println("Total number of puddles " + c);
+      check(ds, grid, row, col);
+
+      while (true) {
+        System.out.println("Enter Same Puddle Check Queries or -1 to skip: ");
+        int r1 = sc.nextInt();
+        if (r1 == -1)
+          break;
+
+        int c1 = sc.nextInt();
+        int r2 = sc.nextInt();
+        int c2 = sc.nextInt();
+
+        checkSamePuddle(ds, grid, r1, c1, r2, c2);
+      }
+      int c = puddleCount(ds, grid);
+      System.out.println("Total number of puddles: " + c);
+    }
+
   }
 }
